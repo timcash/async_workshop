@@ -12,6 +12,24 @@ export const userDB = {
   'frankiestein': {name: 'frankie', color: 'grey', sides: 9}
 }
 
+export function getUserHandleP (token) {
+  return new Promise((resolve, reject) => {
+    getUserHandle(token, (err, res) => {
+      if (err) reject(err)
+      resolve(res)
+    })
+  })
+}
+
+export function getUserDataP (handle) {
+  return new Promise((resolve, reject) => {
+    getUserData(handle, (err, res) => {
+      if (err) reject(err)
+      resolve(res)
+    })
+  })
+}
+
 export function getUserHandle (token, cb) {
   setTimeout(() => {
     if (tokenDB[token]) {

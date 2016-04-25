@@ -7,7 +7,7 @@
   "scripts": {
     "test": "ava --timeout=3s",
     "watch-test": "npm test -- --watch",
-    "transpile": "./node_modules/babel-cli/bin/babel.js --source-maps true src --out-dir lib",
+    "transpile": "./node_modules/babel-cli/bin/babel.js --source-maps inline src --out-dir lib",
     "watch-transpile": "npm run transpile -- --watch"
   },
   "author": "Tim Cash",

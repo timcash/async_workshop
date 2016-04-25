@@ -8,23 +8,29 @@ test.cb('callbacker', t => {
   let cb = (err, res) => {
     if (err) throw new Error(err)
     t.deepEqual(res, expected)
+    t.end()
   }
 
   wshop.callbacker(token, cb)
 })
 
-// test('callbacker', async t => {
-//   let r = await wshop.asyncer()
-//   t.deepEqual(r, [0, 1, 2, 3, 4])
-// })
-//
-// test('bar', async t => {
-//   const bar = Promise.resolve('bar')
-//   t.is(await bar, 'bar')
-// })
-//
-// test('bilbo', t => {
-//   let a = 3
-//   t.is(a, 3)
-//   t.pass()
-// })
+test('promiser', t => {
+  let token = 'token2'
+  let expected = api.userDB['carlmemaybe']
+  return wshop.promiser(token)
+  .then(res => t.deepEqual(res, expected))
+})
+
+test('bar', function * (t) {
+  let token = 'token3'
+  let expected = api.userDB['meghanbacon']
+  let res = yield wshop.yielder(token)
+  t.deepEqual(res, expected)
+})
+
+test('bilbo', async t => {
+  let token = 'token4'
+  let expected = api.userDB['frankiestein']
+  let res = await wshop.asyncer(token)
+  t.deepEqual(res, expected)
+})
