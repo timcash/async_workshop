@@ -2,7 +2,8 @@ export const tokenDB = {
   'token1': {handle: 'timbretone'},
   'token2': {handle: 'carlmemaybe'},
   'token3': {handle: 'meghanbacon'},
-  'token4': {handle: 'frankiestein'}
+  'token4': {handle: 'frankiestein'},
+  'token5': {handle: 'notinthedatabase'}
 }
 
 export const userDB = {
@@ -20,7 +21,7 @@ export function getUserHandle (token, cb) {
     } else {
       cb('token not in the database', undefined)
     }
-  }, 100)
+  }, 103)
 }
 
 export function getUserData (handle, cb) {

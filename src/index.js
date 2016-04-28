@@ -1,10 +1,7 @@
 // import R from 'ramda'
 // import Rx from 'rxjs/Rx'
-import pfy from 'es6-promisify'
+// import pfy from 'es6-promisify'
 import * as api from './api'
-
-let getUser = pfy(api.getUserHandle)
-let getData = pfy(api.getUserData)
 
 export function callbacker (token, cb) {
 
@@ -15,15 +12,23 @@ export function promiser (token) {
 }
 
 export function * yielder (token) {
-  let u = yield getUser(token)
-  let d = yield getData(u.handle)
-  return d
+
 }
 
 export async function asyncer (token) {
-  let u = await getUser(token)
-  let d = await getData(u.handle)
-  return d
+
+}
+
+export function callbackerSum (tokens, cb) {
+
+}
+
+export function promiserSum (tokens) {
+
+}
+
+export async function asyncerSum (tokens) {
+
 }
 
 // export function observer (token, done) {

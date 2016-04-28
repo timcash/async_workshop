@@ -6,7 +6,7 @@
   "repository": "https://github.com/timcash/async_workshop",
   "scripts": {
     "test": "ava",
-    "watch-test": "npm test -- --watch",
+    "watch-test": "npm test -- --watch --timout=3s",
     "transpile": "./node_modules/babel-cli/bin/babel.js --source-maps inline src --out-dir lib",
     "watch-transpile": "npm run transpile -- --watch"
   },
