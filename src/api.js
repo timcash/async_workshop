@@ -15,6 +15,7 @@ export const userDB = {
 export function getUserHandle (token, cb) {
   setTimeout(() => {
     if (tokenDB[token]) {
+      console.log('getUserHandle', token)
       cb(null, tokenDB[token])
     } else {
       cb('token not in the database', undefined)
@@ -25,9 +26,10 @@ export function getUserHandle (token, cb) {
 export function getUserData (handle, cb) {
   setTimeout(() => {
     if (userDB[handle]) {
+      console.log('getUserData', handle)
       cb(null, userDB[handle])
     } else {
-      cb('token not in the database', undefined)
+      cb('handle not in the database', undefined)
     }
   }, 100)
 }
